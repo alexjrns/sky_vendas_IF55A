@@ -7,17 +7,33 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 	private final Context CONTEXTO = this;
+	
+	private ImageButton btnCadastrar;
+	private ImageButton btnVisualizar;
+	private ImageButton btnEditar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		btnCadastrar = (ImageButton) findViewById(R.id.btnCadastrar);
+		btnCadastrar.setOnClickListener(lstCadastrar);
+		btnVisualizar = (ImageButton) findViewById(R.id.btnVisualizar);
+		btnVisualizar.setOnClickListener(lstVisualizar);
+		btnEditar = (ImageButton) findViewById(R.id.btnEditar);
+		btnEditar.setOnClickListener(lstEditar);
 	}
 
 	@Override
@@ -25,6 +41,28 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+	OnClickListener lstCadastrar = new OnClickListener() {		
+		@Override
+		public void onClick(View v) {
+			Intent i = new Intent(CONTEXTO, DadosClienteActivity.class);
+			startActivity(i);
+		}
+	};
+	
+	OnClickListener lstVisualizar = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+
+		}
+	};
+	
+	OnClickListener lstEditar = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+
+		}
+	};
 
 	private void confirmaSair(){
 		Builder alertDialogBuilder = new Builder(CONTEXTO);

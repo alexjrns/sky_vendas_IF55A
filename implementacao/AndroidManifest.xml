@@ -8,16 +8,19 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="21" />
 
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <!--<activity android:name=".LoginActivity" android:label="@string/title_activity_login">  -->
-       	<activity android:name="com.github.sky_vendas.LoginActivity" android:label="@string/app_name">
+
+        <!-- <activity android:name=".LoginActivity" android:label="@string/title_activity_login"> -->
+        <activity
+            android:name="com.github.sky_vendas.LoginActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +31,10 @@
             android:name="com.github.sky_vendas.MainActivity"
             android:label="@string/app_name" >
         </activity>
-        
+        <activity
+            android:name="com.github.sky_vendas.DadosClienteActivity"
+            android:label="@string/lbl2DadosDoCliente" >
+        </activity>
     </application>
 
 </manifest>

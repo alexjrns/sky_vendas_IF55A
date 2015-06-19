@@ -50,7 +50,7 @@ public class LoginActivity extends Activity {
 			if(!isOnline()){
 				Toast.makeText(CONTEXTO, R.string.lblParaEntrarNoSistemaConecteseAInternet, Toast.LENGTH_LONG).show();
 			}else{
-				if(validaCampos() && logar()){
+				if(validaCampos() /*&& logar()*/){
 					Intent i = new Intent(CONTEXTO, MainActivity.class);
 					startActivityForResult(i, LOGIN_REQUEST);
 				}

@@ -5,16 +5,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Configurações</string>
     <string name="action_sair">Sair</string>
+    <string name="action_logoff">Logoff</string>
     <string name="title_activity_login">LoginActivity</string>
-	<string name="lblPergunta">Pergunta</string>
-	<string name="lblTemCertezaQueDesejaSairDoSistema">Tem certeza que deseja sair do sistema?</string>
-	<string name="lblSim">Sim</string>
-	<string name="lblNao">Não</string>
+    <string name="lblPergunta">Pergunta</string>
+    <string name="lblTemCertezaQueDesejaSairDoSistema">Tem certeza que deseja sair do sistema?</string>
+    <string name="lblSim">Sim</string>
+    <string name="lblNao">Não</string>
     <string name="lblLogin">Login</string>
     <string name="lblSenha">Senha</string>
     <string name="lblEntrar">Entrar</string>
     <string name="lblDigiteSeusDadosDeLogin">Digite seus dados de login</string>
-	<string name="lblParaEntrarNoSistemaConecteseAInternet">Para entrar no sistema conecte-se a internet!</string>
+    <string name="lblParaEntrarNoSistemaConecteseAInternet">Para entrar no sistema conecte-se a internet!</string>
     <string name="lblOPreenchimentoDoCampoLOGINEObrigatorio">O preenchimento do campo LOGIN é obrigatório</string>
     <string name="lblOPreenchimentoDoCampoSENHAEObrigatorio">O preenchimento do campo SENHA é obrigatório</string>
     <string name="lblEscolhaUmaAcao">Escolha uma ação</string>
@@ -22,5 +23,14 @@
     <string name="lblVisualizar">Visualizar</string>
     <string name="lblEditar">Editar</string>
     <string name="lblPedidoDeVenda">Pedidos de venda</string>
+    <string name="title_activity_dados_cliente">DadosClienteActivity</string>
+    <string name="lbl2DadosDoCliente">2 - Dados do cliente</string>
+    <string name="lblPessoa">Pessoa</string>
+    <string name="lblFisica">Física</string>
+    <string name="lblJuridica">Jurídica</string>
+    <string name="lblEstrangeiro">Estrangeiro</string>
+    <string name="lblNomeRazaoSocial">Nome/Razão Social</string>
+    <string name="lblddmmaaaa">DD/MM/AAAA</string>
+    <string name="lblDataNascimento">Data de nascimento</string>
 
 </resources>
