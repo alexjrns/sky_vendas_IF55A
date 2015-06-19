@@ -3,19 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
+       <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical" >
 
         <TextView
             android:id="@+id/txtPessoa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
+            android:layout_marginLeft="4dp"
             android:text="@string/lblPessoa" />
 
         <RadioGroup
@@ -47,7 +53,8 @@
             android:id="@+id/txtNomeRazao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
+            android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
             android:text="@string/lblNomeRazaoSocial" />
 
@@ -64,10 +71,41 @@
         </EditText>
 
         <TextView
+            android:id="@+id/txtCPFCNPJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblCPFCNPJ" />
+
+        <EditText
+            android:id="@+id/edtCPFCNPJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lblMascaraCPF"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/txtRGIERNE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblRGIERNE" />
+
+        <EditText
+            android:id="@+id/edtRGIERNE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lblMascaraCPF"
+            android:inputType="number" />
+
+        <TextView
             android:id="@+id/txtDataNascimento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="left"
+            android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
             android:text="@string/lblDataNascimento" />
 
@@ -79,6 +117,169 @@
             android:ems="10"
             android:hint="@string/lblddmmaaaa"
             android:inputType="date" />
+
+        <TextView
+            android:id="@+id/txtTelefoneResidencial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblTelefoneResidencial" />
+
+        <EditText
+            android:id="@+id/edtTelefoneResidencial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lblMascaraTelefone"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/txtTelefoneComercial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblTelefoneComercial" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/edtTelefoneComercial"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblMascaraTelefone"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/edtRamal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/lblRamal"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTelefoneCelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblTelefoneCelular" />
+
+        <EditText
+            android:id="@+id/edtTelefoneCelular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/lblMascaraTelefone"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/txtSexo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblSexo" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+        
+	        <RadioButton
+	            android:id="@+id/rbMasculino"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblMasculino" />
+
+	        <RadioButton
+	            android:id="@+id/rbFeminino"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblFeminino" />
+
+		</RadioGroup>
+
+        <TextView
+            android:id="@+id/txtEstadoCivil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblEstadoCivil" />
+		
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rbCasado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblCasado" />
+
+            <RadioButton
+                android:id="@+id/rbSolteiro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblSolteiro" />
+
+            <RadioButton
+                android:id="@+id/rbOutros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblOutros" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="@string/lblEmail" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <CheckBox
+            android:id="@+id/chkEmailNaoInformado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lblEmailNaoInformado" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center" >
+
+            <ImageButton
+                android:id="@+id/btnVoltar2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_voltar" />
+
+            <ImageButton
+                android:id="@+id/btnAvancar2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_avancar" />
+
+        </LinearLayout>
+
     </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

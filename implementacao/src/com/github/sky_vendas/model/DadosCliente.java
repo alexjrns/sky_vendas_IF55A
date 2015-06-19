@@ -1,8 +1,11 @@
 package com.github.sky_vendas.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class DadosCliente {
+public class DadosCliente implements Serializable {
+	private static final long serialVersionUID = 454202921870607468L;
+
 	private int codigo;
 	private String tipoPessoa;
 	private Calendar dataNascimento;

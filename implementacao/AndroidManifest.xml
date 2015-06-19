@@ -35,6 +35,10 @@
             android:name="com.github.sky_vendas.DadosClienteActivity"
             android:label="@string/lbl2DadosDoCliente" >
         </activity>
+        <activity
+            android:name="com.github.sky_vendas.InstalacaoReceptoresActivity"
+            android:label="@string/title_activity_instalacao_receptores" >
+        </activity>
     </application>
 
 </manifest>

@@ -25,12 +25,31 @@
     <string name="lblPedidoDeVenda">Pedidos de venda</string>
     <string name="title_activity_dados_cliente">DadosClienteActivity</string>
     <string name="lbl2DadosDoCliente">2 - Dados do cliente</string>
-    <string name="lblPessoa">Pessoa</string>
+    <string name="lblPessoa">Tipo de pessoa</string>
     <string name="lblFisica">Física</string>
     <string name="lblJuridica">Jurídica</string>
     <string name="lblEstrangeiro">Estrangeiro</string>
-    <string name="lblNomeRazaoSocial">Nome/Razão Social</string>
+    <string name="lblNomeRazaoSocial">Nome / Razão Social</string>
     <string name="lblddmmaaaa">DD/MM/AAAA</string>
     <string name="lblDataNascimento">Data de nascimento</string>
+    <string name="lblMascaraTelefone">(99) 9999-9999</string>
+    <string name="lblTelefoneResidencial">Telefone residencial</string>
+    <string name="lblTelefoneComercial">Telefone comercial / Ramal</string>
+    <string name="lblRamal">9999</string>
+    <string name="lblTelefoneCelular">Telefone celular</string>
+    <string name="lblMasculino">Masculino</string>
+    <string name="lblFeminino">Feminino</string>
+    <string name="lblSexo">Sexo</string>
+    <string name="lblCasado">Casado</string>
+    <string name="lblSolteiro">Solteiro</string>
+    <string name="lblOutros">Outros</string>
+    <string name="lblEstadoCivil">Estado civil</string>
+    <string name="lblEmail">E-mail</string>
+    <string name="lblEmailProvedor">email@site.com</string>
+    <string name="lblEmailNaoInformado">E-mail não informado</string>
+    <string name="title_activity_instalacao_receptores">InstalacaoReceptoresActivity</string>
+    <string name="lblCPFCNPJ">CPF / CNPJ</string>
+    <string name="lblMascaraCPF">99.99.999-99</string>
+    <string name="lblRGIERNE">RG / IE / RNE</string>
 
 </resources>
