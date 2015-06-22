@@ -15,7 +15,7 @@ public abstract class SingletonUtilitario {
 		return resourceURL;
 	}
 
-	public static void imprime(Context contexto, String titulo, String mensagem){
+	public static void imprime(Context contexto, String titulo, CharSequence mensagem){
 		Builder alertDialogBuilder = new Builder(contexto);
 		alertDialogBuilder.setTitle(titulo);
 		alertDialogBuilder.setMessage(mensagem);

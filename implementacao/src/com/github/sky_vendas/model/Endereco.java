@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable{
+	private static final long serialVersionUID = 5313899624505124770L;
 	private int id;
 	private String endereco;
 	private String numero;

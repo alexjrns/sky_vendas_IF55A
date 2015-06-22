@@ -37,7 +37,19 @@
         </activity>
         <activity
             android:name="com.github.sky_vendas.InstalacaoReceptoresActivity"
-            android:label="@string/title_activity_instalacao_receptores" >
+            android:label="@string/lbl3InstalacaoReceptores" >
+        </activity>
+        <activity
+            android:name="com.github.sky_vendas.EnderecoCobrancaActivity"
+            android:label="@string/lbl4EnderecoCobranca" >
+        </activity>
+        <activity
+            android:name="com.github.sky_vendas.ProgramacaoPromocoesActivity"
+            android:label="@string/lbl5ProgramacaoEPromocoes" >
+        </activity>
+        <activity
+            android:name="com.github.sky_vendas.ComodatoVendaActivity"
+            android:label="@string/lbl6ComodatoVenda" >
         </activity>
     </application>
 

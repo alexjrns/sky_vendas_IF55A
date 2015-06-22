@@ -4,7 +4,9 @@ import java.util.Calendar;
 
 import com.example.sky_vendas.R;
 import com.github.sky_vendas.model.DadosCliente;
+import com.github.sky_vendas.model.Endereco;
 import com.github.sky_vendas.model.Format;
+import com.github.sky_vendas.model.InstalacaoDosReceptores;
 
 import android.app.Activity;
 import android.content.Context;
@@ -38,10 +40,11 @@ public class DadosClienteActivity extends Activity {
 	private RadioButton rbOutros;
 	private EditText edtEmail;
 	private CheckBox chkEmailNaoInformado;
-	private ImageButton btnVoltar;
 	private ImageButton btnAvancar;
 	
 	private DadosCliente objDadosCliente;
+	private InstalacaoDosReceptores objInstalacaoReceptores;
+	private Endereco objEnderecoCobranca;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +69,15 @@ public class DadosClienteActivity extends Activity {
 		rbOutros = (RadioButton) findViewById(R.id.rbOutros);
 		edtEmail = (EditText) findViewById(R.id.edtEmail);
 		chkEmailNaoInformado = (CheckBox) findViewById(R.id.chkEmailNaoInformado);
-		btnVoltar = (ImageButton) findViewById(R.id.btnVoltar2);
 		btnAvancar = (ImageButton) findViewById(R.id.btnAvancar2);
 		btnAvancar.setOnClickListener(lstAvancar);
+		
+		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
+		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
+		objEnderecoCobranca = (Endereco) getIntent().getSerializableExtra("objEnderecoCobranca");
+		
+		if(objDadosCliente != null)
+			preencheTela();
 	}
 	
 	OnClickListener lstAvancar = new OnClickListener() {
@@ -76,19 +85,88 @@ public class DadosClienteActivity extends Activity {
 		public void onClick(View v) {
 			if(validaCampos()){
 				Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
-				i.putExtra("dadosCliente", criaObjeto());
-				startActivityForResult(i, 10);
+				i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+				i.putExtra("objDadosCliente", criaObjeto());
+				startActivity(i);
 			}
 		}
 	};
 	
+	private void preencheTela(){
+		if(objDadosCliente.getTipoPessoa().equals("Física")){
+			rbFisica.setChecked(true);
+			rbJuridica.setChecked(false);
+			rbEstrangeira.setChecked(false);	
+		}else if(objDadosCliente.getTipoPessoa().equals("Jurídica")){
+			rbFisica.setChecked(false);
+			rbJuridica.setChecked(true);
+			rbEstrangeira.setChecked(false);			
+		}else if(objDadosCliente.getTipoPessoa().equals("Estrangeira")){
+			rbFisica.setChecked(false);
+			rbJuridica.setChecked(false);
+			rbEstrangeira.setChecked(true);			
+		}
+		edtNomeRazao.setText(objDadosCliente.getNomeRazao());
+		edtCPFCNPJ.setText(objDadosCliente.getCpfCNPJ());
+		edtRGIECNE.setText(objDadosCliente.getRgIeRNE());
+		//edtDataNascimento.setText(objDadosCliente.getDataNascimento());
+		edtTelefoneResidencial.setText(objDadosCliente.getTelefoneResidencial());
+		edtTelefoneComercial.setText(objDadosCliente.getTelefoneComercial());
+		edtRamal.setText(objDadosCliente.getRamal());
+		edtTelefoneCelular.setText(objDadosCliente.getTelefoneCelular());
+		if(objDadosCliente.isSexo()){
+			rbMasculino.setChecked(true);
+			rbFeminino.setChecked(false);
+		}else{
+			rbMasculino.setChecked(false);
+			rbFeminino.setChecked(true);			
+		}
+		if(objDadosCliente.getEstadoCivil().equals("Casado")){
+			rbCasado.setChecked(true);
+			rbSolteiro.setChecked(false);
+			rbOutros.setChecked(false);
+		}else if(objDadosCliente.getEstadoCivil().equals("Solteiro")){
+			rbCasado.setChecked(false);
+			rbSolteiro.setChecked(true);
+			rbOutros.setChecked(false);
+		}else{
+			rbCasado.setChecked(false);
+			rbSolteiro.setChecked(false);
+			rbOutros.setChecked(true);
+		}
+
+		edtEmail.setText(objDadosCliente.getEmail());
+		chkEmailNaoInformado.setChecked(objDadosCliente.isEmailNaoInformado());
+	}
+	
 	private boolean validaCampos(){
 		if(edtNomeRazao == null || edtNomeRazao.getText().toString().equals("")){
-			SingletonUtilitario.imprime(CONTEXTO, "Atenção", "É obrigatório o preenchimento do campo NOME!");
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " NOME");
 			return false;
 		}
 		if(edtCPFCNPJ == null || edtCPFCNPJ.getText().toString().equals("")){
-			SingletonUtilitario.imprime(CONTEXTO, "Atenção", "É obrigatório o preenchimento do campo CPF/CNPJ!");
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " CPF/CNPJ");
+			return false;
+		}
+		if(edtRGIECNE == null || edtRGIECNE.getText().toString().equals("")){
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " RG/IE/CNE");
+			return false;
+		}
+		if(edtDataNascimento == null || edtDataNascimento.getText().toString().equals("")){
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " DATA DE NASCIMENTO");
+			return false;
+		} 
+		/*if(edtDataNascimento == null || edtDataNascimento.getText().toString().length() != 8 || edtDataNascimento.getText().toString().length() != 10){
+			SingletonUtilitario.imprime(CONTEXTO, "Atenção!", "Informe uma data de nascimento válida no formato DD/MM/AAAA");
+			return false;
+		}*/
+		if(edtTelefoneResidencial == null || edtTelefoneResidencial.getText().toString().equals("")){
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " TELEFONE RESIDENCIAL");
+			return false;
+		}
+		if(edtTelefoneCelular == null || edtTelefoneCelular.getText().toString().equals("")){
+			SingletonUtilitario.imprime(CONTEXTO, getString(R.string.lblAtencao), getString(R.string.lblEObrigatorioOPreenchimentoDoCampo) + " TELEFONE CELULAR");
 			return false;
 		}
 		return true;
@@ -97,7 +175,7 @@ public class DadosClienteActivity extends Activity {
 	private DadosCliente criaObjeto(){
 		String tipoPessoa = "Não informado";
 		if(rbFisica.isChecked()){
-			tipoPessoa = "Fisica";
+			tipoPessoa = "Física";
 		}else if(rbJuridica.isChecked()){
 			tipoPessoa = "Jurídica";
 		}else if(rbEstrangeira.isChecked()){

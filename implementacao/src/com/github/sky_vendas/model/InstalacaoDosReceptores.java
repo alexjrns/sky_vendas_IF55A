@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class InstalacaoDosReceptores {
+import java.io.Serializable;
+
+public class InstalacaoDosReceptores implements Serializable{
+	private static final long serialVersionUID = 9029726773980749969L;
 	private int id;
 	private boolean casa;
 	private Endereco endereco;
@@ -17,9 +20,7 @@ public class InstalacaoDosReceptores {
 	}
 
 	public InstalacaoDosReceptores(int id, boolean casa, Endereco endereco,
-			String numero, String aptoCasa, String complemento, String bairro,
-			String nomeCondominio, String nomeEdificio, String cidade,
-			String uF, String cEP, String pontoReferencia,
+			String nomeCondominio, String nomeEdificio,	String pontoReferencia,
 			String nomeResponsavelAntendimentoAoInstalador, Receptor principal,
 			Receptor opcional, Receptor bandaLarga) {
 		super();

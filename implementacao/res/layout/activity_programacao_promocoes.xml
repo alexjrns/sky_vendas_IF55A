@@ -1,0 +1,332 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:orientation="vertical"
+	        android:scrollbarStyle="outsideInset"
+	        android:scrollbars="vertical" >
+		
+		      <TextView
+		            android:id="@+id/txtPacotes"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblPacotes" />
+		        
+		       <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:gravity="bottom|center" >
+		
+		           <CheckBox
+		               android:id="@+id/chkSKYLight2"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYLight2"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkSKYPrePago6M"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYPrepago6M"
+		               android:textSize="08dp" />
+   		           <CheckBox
+		               android:id="@+id/chkSKYPrePago12M"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYPrepago12M"
+		               android:textSize="08dp" />
+   		           <CheckBox
+		               android:id="@+id/chkSKYPrePago24M"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYPrepago24M"
+		               android:textSize="08dp" />
+		        </LinearLayout>
+		        
+		      <TextView
+		            android:id="@+id/txtPacotesHD"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblPacotesHD" />
+		        
+		       <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:gravity="bottom|center" >
+		
+		           <CheckBox
+		               android:id="@+id/chkSKYMixHD"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYMixHD"
+		               android:textSize="12dp" />
+		           <CheckBox
+		               android:id="@+id/chkSKYLightHD"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblSKYLightHD"
+		               android:textSize="12dp" />
+		        </LinearLayout>		       
+
+		      <TextView
+		            android:id="@+id/txtCombosHD"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblCombosHD" />
+		        
+		       <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:gravity="bottom|center" >
+		
+		           <CheckBox
+		               android:id="@+id/chkHBOMAX"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBOMAX"
+		               android:textSize="12dp" />
+		           <CheckBox
+		               android:id="@+id/chkTelecine"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblTelecine"
+		               android:textSize="12dp" />
+		           <CheckBox
+		               android:id="@+id/chkCinema"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblCinema"
+		               android:textSize="12dp" />
+		        </LinearLayout>		
+
+		      <TextView
+		            android:id="@+id/txtCombosHDPlus"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblCombosHDPlus" />
+		        
+		       <LinearLayout
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:gravity="bottom|center" >
+
+		           <CheckBox
+		               android:id="@+id/chkCinemaCombo"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblCinema"
+		               android:textSize="12dp" />
+		           <CheckBox
+		               android:id="@+id/chkCinemaFutebol"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblCinemaFutebol"
+		               android:textSize="12dp" />
+		        </LinearLayout>		
+
+		      <TextView
+		            android:id="@+id/txtCombosHDFull"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblCombosHDFull" />
+
+		       <LinearLayout
+		           android:layout_width="match_parent"
+		           android:layout_height="wrap_content"
+		           android:gravity="bottom|center" >
+
+		           <CheckBox
+		               android:id="@+id/chkHBOMAXFull"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBOMAX"
+		               android:textSize="12dp" />
+		           <CheckBox
+		               android:id="@+id/chkTelecineFull"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblTelecine"
+		               android:textSize="12dp" />
+		        </LinearLayout>		
+
+			  <View
+			      android:id="@+id/Divisor1"
+			      android:layout_width="fill_parent"
+			      android:layout_height="2dip"
+			      android:layout_marginTop="15dp"
+			      android:background="#A8A8A8" />
+
+		      <TextView
+		            android:id="@+id/txtPacotesAdicionais"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="@string/lblPacotesAdicionais" />
+		      
+	      	  <CheckBox
+	               android:id="@+id/chkNenhum"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblNenhum"
+	               android:textSize="10sp" />
+		      
+   		       <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="bottom|center" >
+
+		           <CheckBox
+		               android:id="@+id/chkHDLight"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHDLight"
+		               android:textSize="09sp" />
+		           <CheckBox
+		               android:id="@+id/chkHDMix"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHDMix"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkHDFull"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHDFull"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkHBOHD"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBOHD"
+		               android:textSize="09dp" />
+		        </LinearLayout>
+
+   		       <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="bottom|center" >
+
+		           <CheckBox
+		               android:id="@+id/chkTelecineHD"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblTelecineHD"
+		               android:textSize="09sp" />
+		           <CheckBox
+		               android:id="@+id/chkHBOMAXAdicional"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBOMAX"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkHBODigital4"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBODigital4"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkHBOBrasil"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblHBOBrasil"
+		               android:textSize="09dp" />
+		        </LinearLayout>		
+
+   		       <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="bottom|center" >
+
+		           <CheckBox
+		               android:id="@+id/chkTelecineAdicional"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblTelecine"
+		               android:textSize="09sp" />
+		           <CheckBox
+		               android:id="@+id/chkTelecine3"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblTelecine3"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkPremiereSD"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblPremiereSD"
+		               android:textSize="09dp" />
+		           <CheckBox
+		               android:id="@+id/chkPremHDPlay"
+		               android:layout_width="wrap_content"
+		               android:layout_height="wrap_content"
+		               android:text="@string/lblPremHDPlay"
+		               android:textSize="09dp" />
+		        </LinearLayout>
+
+   		       <TextView
+   		           android:id="@+id/txtInformacoesAdicionais"
+   		           android:layout_width="wrap_content"
+   		           android:layout_height="wrap_content"
+   		           android:text="@string/lblInformacoesAdicionais" />
+
+   		       <EditText
+   		           android:id="@+id/edtInformacoesAdicionais"
+   		           android:layout_width="match_parent"
+   		           android:layout_height="wrap_content"
+   		           android:ems="10" >
+
+   		           <requestFocus />
+   		       </EditText>
+
+   		       <TextView
+   		           android:id="@+id/txtMensalidadeProgramacao"
+   		           android:layout_width="wrap_content"
+   		           android:layout_height="wrap_content"
+   		           android:text="@string/lblMensalidadeDeProgramacao" />
+
+   		       <EditText
+   		           android:id="@+id/edtTotalMensalidade"
+   		           android:layout_width="match_parent"
+   		           android:layout_height="wrap_content"
+   		           android:ems="10"
+   		           android:inputType="numberDecimal" />
+   		       
+			  <View      
+			    android:id="@+id/Divisor3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+           <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|center" >
+
+	            <ImageButton
+	                android:id="@+id/btnVoltar5"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="start"
+	                android:src="@drawable/ic_voltar" />
+	
+	            <ImageButton
+	                android:id="@+id/btnAvancar5"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="end"
+	                android:src="@drawable/ic_avancar" />
+        	</LinearLayout>
+   		       
+        	</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

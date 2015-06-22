@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:orientation="vertical"
+	        android:scrollbarStyle="outsideInset"
+	        android:scrollbars="vertical" >
+
+            <TextView
+                android:id="@+id/txtEndereco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblEndereco" />
+
+            <EditText
+                android:id="@+id/edtEnderecoCobranca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/txtNumeroCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblNumero" />
+
+            <EditText
+                android:id="@+id/edtNumeroCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/txtAptoCasaCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblAptoCasa" />
+
+            <EditText
+                android:id="@+id/edtAptoCasaCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/txtComplementoCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblComplemento" />
+
+            <EditText
+                android:id="@+id/edtComplementoCobranca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/txtBairroCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblBairro" />
+
+            <EditText
+                android:id="@+id/edtBairroCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/txtCidadeCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblCidade" />
+
+            <EditText
+                android:id="@+id/edtCidadeCobranca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/txtUFCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblUF" />
+
+            <EditText
+                android:id="@+id/edtUFCobranca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <TextView
+                android:id="@+id/txtCEPCobranca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lblCEP" />
+
+            <EditText
+                android:id="@+id/edtCEPCobranca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lblMascaraCEP"
+                android:inputType="number" />
+			  <View      
+			    android:id="@+id/Divisor1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+           <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|center" >
+
+	            <ImageButton
+	                android:id="@+id/btnVoltar4"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="start"
+	                android:src="@drawable/ic_voltar" />
+	
+	            <ImageButton
+	                android:id="@+id/btnAvancar4"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="end"
+	                android:src="@drawable/ic_avancar" />
+        	</LinearLayout>
+            
+    	</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

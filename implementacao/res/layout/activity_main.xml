@@ -8,70 +8,94 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.github.sky_vendas.MainActivity" >
 
-    <TextView
-        android:id="@+id/txtPedidoDeVenda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/lblPedidoDeVenda"
-        android:textStyle="bold" />
+    <ScrollView
+        android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/txtPedidoDeVenda"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:columnCount="3"
-        android:gravity="center"
+        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:orientation="vertical">
+		
+		    <TextView
+		        android:id="@+id/txtPedidoDeVenda"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_gravity="center"
+		        android:layout_marginTop="32dp"
+		        android:text="@string/lblPedidoDeVenda"
+		        android:textStyle="bold" />
+		
+		    <GridLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_below="@+id/txtPedidoDeVenda"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginTop="20dp"
+		        android:columnCount="3"
+		        android:gravity="center"
+		
+		        android:orientation="horizontal"
+		        tools:context=".GridXMLActivity" >
+		
+		        <ImageButton
+		            android:id="@+id/btnCadastrar"
+		            android:layout_column="0"
+		            android:layout_gravity="top|fill_horizontal"
+		            android:layout_row="0"
+		            android:src="@drawable/ic_cadastrar" />
+		
+		        <ImageButton
+		            android:id="@+id/btnVisualizar"
+		            android:layout_column="1"
+		            android:layout_gravity="center|top"
+		            android:layout_row="0"
+		            android:src="@drawable/ic_visualizar" />
+		
+		        <ImageButton
+		            android:id="@+id/btnEditar"
+		            android:layout_column="2"
+		            android:layout_gravity="top|fill_vertical"
+		            android:layout_row="0"
+		            android:src="@drawable/ic_editar" />
+				<TextView
+		            android:id="@+id/txtCadastrar"
+		            android:layout_column="0"
+		            android:layout_gravity="center|top"
+		            android:layout_row="1"
+		            android:text="@string/lblCadastrar" />
+		
+		        <TextView
+		            android:id="@+id/txtVisualizar"
+		            android:layout_column="1"
+		            android:layout_gravity="center|top"
+		            android:layout_row="1"
+		            android:text="@string/lblVisualizar" />
+		
+		
+		        <TextView
+		            android:id="@+id/txtEditar"
+		            android:layout_column="2"
+		            android:layout_gravity="center|top"
+		            android:layout_row="1"
+		            android:text="@string/lblEditar" />
+		        
+		
+		    </GridLayout>
+		
+		       <View
+		           android:id="@+id/Divisor1"
+		           android:layout_width="fill_parent"
+		           android:layout_height="1dip"
+		           android:layout_marginTop="30dp"
+		           android:background="#A8A8A8" />
+            
+        </LinearLayout>
+   </ScrollView>
 
-        android:orientation="horizontal"
-        tools:context=".GridXMLActivity" >
-
-        <ImageButton
-            android:id="@+id/btnCadastrar"
-            android:layout_column="0"
-            android:layout_gravity="top|fill_horizontal"
-            android:layout_row="0"
-            android:src="@drawable/ic_cadastrar" />
-
-        <ImageButton
-            android:id="@+id/btnVisualizar"
-            android:layout_column="1"
-            android:layout_gravity="center|top"
-            android:layout_row="0"
-            android:src="@drawable/ic_visualizar" />
-
-        <ImageButton
-            android:id="@+id/btnEditar"
-            android:layout_column="2"
-            android:layout_gravity="top|fill_vertical"
-            android:layout_row="0"
-            android:src="@drawable/ic_editar" />
-<TextView
-            android:id="@+id/txtCadastrar"
-            android:layout_column="0"
-            android:layout_gravity="center|top"
-            android:layout_row="1"
-            android:text="@string/lblCadastrar" />
-
-        <TextView
-            android:id="@+id/txtVisualizar"
-            android:layout_column="1"
-            android:layout_gravity="center|top"
-            android:layout_row="1"
-            android:text="@string/lblVisualizar" />
-
-
-        <TextView
-            android:id="@+id/txtEditar"
-            android:layout_column="2"
-            android:layout_gravity="center|top"
-            android:layout_row="1"
-            android:text="@string/lblEditar" />
-
-    </GridLayout>
 
 </RelativeLayout>
