@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 	private ImageButton btnCadastrar;
 	private ImageButton btnVisualizar;
 	private ImageButton btnEditar;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 		btnVisualizar.setOnClickListener(lstVisualizar);
 		btnEditar = (ImageButton) findViewById(R.id.btnEditar);
 		btnEditar.setOnClickListener(lstEditar);
+
 	}
 
 	@Override
@@ -42,22 +43,23 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	OnClickListener lstCadastrar = new OnClickListener() {		
+	private OnClickListener lstCadastrar = new OnClickListener() {		
 		@Override
 		public void onClick(View v) {
-			Intent i = new Intent(CONTEXTO, DadosClienteActivity.class);
+			Intent i = new Intent(CONTEXTO, PontoDeVendaActivity.class);
 			startActivity(i);
 		}
 	};
 	
-	OnClickListener lstVisualizar = new OnClickListener() {
+	private OnClickListener lstVisualizar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-
+			Intent i = new Intent(CONTEXTO, VisualizarPedidosActivity.class);
+			startActivity(i);
 		}
 	};
 	
-	OnClickListener lstEditar = new OnClickListener() {
+	private OnClickListener lstEditar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
 

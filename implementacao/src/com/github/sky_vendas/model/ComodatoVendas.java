@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class ComodatoVendas {
+import java.io.Serializable;
+
+public class ComodatoVendas implements Serializable {
+	private static final long serialVersionUID = 71836904938708472L;
 	private int id;
 
 	/* Comodato/Venda (no ato) */
@@ -11,6 +14,7 @@ public class ComodatoVendas {
 	private boolean atoDebitoAutomaticoContaCorrente;
 	private boolean atoFichaCompensacao;
 	private boolean atoPECPPB;
+	private boolean atoCEFFinanciamento;
 	
 	/* Mensalidades de programação */
 	private boolean mensalidadeCartaoCreditoDebito;
@@ -21,8 +25,8 @@ public class ComodatoVendas {
 	private boolean prePagoAVista;
 	private boolean prePagoparcelado12meses;
 	private double prePagoValor;
-	private boolean prePagoQtdParcelas;
-	private boolean prePagoValorParcela;
+	private int prePagoQtdParcelas;
+	private double prePagoValorParcela;
 
 	public ComodatoVendas() {
 		super();
@@ -31,12 +35,12 @@ public class ComodatoVendas {
 	public ComodatoVendas(int id, boolean atoTaxaDeAdesaoComodato, boolean atoVenda,
 			double atoValor, boolean atoCartaoCreditoDebito,
 			boolean atoDebitoAutomaticoContaCorrente,
-			boolean atoFichaCompensacao, boolean atoPECPPB,
+			boolean atoFichaCompensacao, boolean atoPECPPB, boolean atoCEFFinanciamento,
 			boolean mensalidadeCartaoCreditoDebito,
 			boolean mensalidadeDebitoAutomaticoContaCorrente,
 			boolean mensalidadeBoletoBancario, boolean prePagoAVista,
 			boolean prePagoparcelado12meses, double prePagoValor,
-			boolean prePagoQtdParcelas, boolean prePagoValorParcela) {
+			int prePagoQtdParcelas, double prePagoValorParcela) {
 		super();
 		this.id = id;
 		this.atoTaxaDeAdesaoComodato = atoTaxaDeAdesaoComodato;
@@ -46,6 +50,7 @@ public class ComodatoVendas {
 		this.atoDebitoAutomaticoContaCorrente = atoDebitoAutomaticoContaCorrente;
 		this.atoFichaCompensacao = atoFichaCompensacao;
 		this.atoPECPPB = atoPECPPB;
+		this.atoCEFFinanciamento = atoCEFFinanciamento;
 		this.mensalidadeCartaoCreditoDebito = mensalidadeCartaoCreditoDebito;
 		this.mensalidadeDebitoAutomaticoContaCorrente = mensalidadeDebitoAutomaticoContaCorrente;
 		this.mensalidadeBoletoBancario = mensalidadeBoletoBancario;
@@ -74,6 +79,14 @@ public class ComodatoVendas {
 
 	public double getAtoValor() {
 		return atoValor;
+	}
+
+	public boolean isAtoCEFFinanciamento() {
+		return atoCEFFinanciamento;
+	}
+
+	public void setAtoCEFFinanciamento(boolean atoCEFFinanciamento) {
+		this.atoCEFFinanciamento = atoCEFFinanciamento;
 	}
 
 	public boolean isAtoCartaoCreditoDebito() {
@@ -116,11 +129,11 @@ public class ComodatoVendas {
 		return prePagoValor;
 	}
 
-	public boolean isPrePagoQtdParcelas() {
+	public int getPrePagoQtdParcelas() {
 		return prePagoQtdParcelas;
 	}
 
-	public boolean isPrePagoValorParcela() {
+	public double getPrePagoValorParcela() {
 		return prePagoValorParcela;
 	}
 
@@ -179,11 +192,11 @@ public class ComodatoVendas {
 		this.prePagoValor = prePagoValor;
 	}
 
-	public void setPrePagoQtdParcelas(boolean prePagoQtdParcelas) {
+	public void setPrePagoQtdParcelas(int prePagoQtdParcelas) {
 		this.prePagoQtdParcelas = prePagoQtdParcelas;
 	}
 
-	public void setPrePagoValorParcela(boolean prePagoValorParcela) {
+	public void setPrePagoValorParcela(double prePagoValorParcela) {
 		this.prePagoValorParcela = prePagoValorParcela;
 	}
 

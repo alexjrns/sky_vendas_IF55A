@@ -1,0 +1,233 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+	<ScrollView
+		android:id="@+id/scrollView1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentLeft="true"
+			android:orientation="vertical"
+			android:scrollbarStyle="outsideInset"
+			android:scrollbars="vertical" >
+            <TextView
+               android:id="@+id/txtDebitoAutomaticoCartaoCredito"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblDebitoAutomaticoCartaoCredito" />
+            
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|left" >
+	
+	           <CheckBox
+	               android:id="@+id/chkDebitoVisa"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblVisa"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkDebitoHipercard"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblHipercard"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkDebitoDiners"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblDiners"
+	               android:textSize="12dp" />
+           </LinearLayout>
+           
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|left" >
+
+	           <CheckBox
+	               android:id="@+id/chkDebitoMasterCard"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblMasterCard"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkDebitoAmex"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblAmex"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkDebitoElo"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblElo"
+	               android:textSize="12dp" />
+           </LinearLayout>
+
+           <TextView
+               android:id="@+id/txtNumeroDoCartao"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblNumeroDoCartao" />
+			
+			<EditText
+			    android:id="@+id/edtNumeroCartao"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:inputType="number" />
+	           
+           <TextView
+               android:id="@+id/txtDataDeValidade"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblValidade" />
+			<EditText
+			    android:id="@+id/edtDataDeValidadeCartao"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+            	android:hint="@string/lblMMAA"
+            	android:inputType="date" />
+      	   <View      
+			    android:id="@+id/Divisor1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+            <TextView
+               android:id="@+id/txtDebitoAutomaticoEmContaCorrente"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblDebitoAutomaticoEmContaCorrente" />
+            
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|left" >
+
+	           <CheckBox
+	               android:id="@+id/chkbanrisul"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblBanrisul"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkBradesco"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblBradesco"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkBancoDoBrasil"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblBancoDoBrasil"
+	               android:textSize="12dp" />
+           </LinearLayout>
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|left" >
+
+	           <CheckBox
+	               android:id="@+id/chkCitibank"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblCitibank"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkCIF"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblCIF"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkHSBC"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblHSBC"
+	               android:textSize="12dp" />
+           </LinearLayout>            
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|left" >
+
+	           <CheckBox
+	               android:id="@+id/chkItau"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblItau"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkSantander"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblSantander"
+	               android:textSize="12dp" />
+	           <CheckBox
+	               android:id="@+id/chkSicredi"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:text="@string/lblSicredi"
+	               android:textSize="12dp" />
+           </LinearLayout>
+            <TextView
+               android:id="@+id/txtAgencia"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblAgencia" />
+			<EditText
+			    android:id="@+id/edtAgencia"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:inputType="number" />
+
+            <TextView
+               android:id="@+id/txtContaCorrente"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/lblContaCorrente" />
+   			<EditText
+			    android:id="@+id/edtContaCorrente"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:inputType="number" />
+	       	<View      
+			    android:id="@+id/Divisor2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|center" >
+
+	            <ImageButton
+	                android:id="@+id/btnVoltar6"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="start"
+	                android:src="@drawable/ic_voltar" />
+	
+	            <ImageButton
+	                android:id="@+id/btnAvancar6"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="end"
+	                android:src="@drawable/ic_avancar" />
+        	</LinearLayout>
+            		    
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

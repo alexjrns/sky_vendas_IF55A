@@ -51,6 +51,18 @@
             android:name="com.github.sky_vendas.ComodatoVendaActivity"
             android:label="@string/lbl6ComodatoVenda" >
         </activity>
+        <activity
+            android:name="com.github.sky_vendas.DadosParaDebitoActivity"
+            android:label="@string/lbl7DadosParaDebito" >
+        </activity>
+        <activity
+            android:name="com.github.sky_vendas.PontoDeVendaActivity"
+            android:label="@string/lbl1PontoDeVenda" >
+        </activity>
+        <activity
+            android:name="com.github.sky_vendas.VisualizarPedidosActivity"
+            android:label="@string/lblPedidosCadastrados" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class ProgramacaoPromocoes {
+import java.io.Serializable;
+
+public class ProgramacaoPromocoes implements Serializable{
+	private static final long serialVersionUID = -6459801903315727609L;
 	private int id;
 	private String informacoesAdicionais;
 	private double total;

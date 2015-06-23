@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class DadosParaDebito {
+import java.io.Serializable;
+
+public class DadosParaDebito implements Serializable {
+	private static final long serialVersionUID = 1636422844124182098L;
 	private int id;
 	
 	/* Débito automático no cartão de crédito */

@@ -3,10 +3,13 @@ package com.github.sky_vendas;
 import java.util.Calendar;
 
 import com.example.sky_vendas.R;
+import com.github.sky_vendas.model.ComodatoVendas;
 import com.github.sky_vendas.model.DadosCliente;
+import com.github.sky_vendas.model.DadosParaDebito;
 import com.github.sky_vendas.model.Endereco;
 import com.github.sky_vendas.model.Format;
 import com.github.sky_vendas.model.InstalacaoDosReceptores;
+import com.github.sky_vendas.model.ProgramacaoPromocoes;
 
 import android.app.Activity;
 import android.content.Context;
@@ -42,9 +45,14 @@ public class DadosClienteActivity extends Activity {
 	private CheckBox chkEmailNaoInformado;
 	private ImageButton btnAvancar;
 	
+	/* Objetos compartilhados */
 	private DadosCliente objDadosCliente;
 	private InstalacaoDosReceptores objInstalacaoReceptores;
 	private Endereco objEnderecoCobranca;
+	private ProgramacaoPromocoes objProgramacaoPromocoes;
+	private ComodatoVendas objComodatoVendas;
+	private DadosParaDebito objDadosParaDebito;
+	/*					*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +83,9 @@ public class DadosClienteActivity extends Activity {
 		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
 		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
 		objEnderecoCobranca = (Endereco) getIntent().getSerializableExtra("objEnderecoCobranca");
+		objProgramacaoPromocoes = (ProgramacaoPromocoes) getIntent().getSerializableExtra("objProgramacaoPromocoes");
+		objComodatoVendas = (ComodatoVendas) getIntent().getSerializableExtra("objComodatoVendas");
+		objDadosParaDebito = (DadosParaDebito) getIntent().getSerializableExtra("objDadosParaDebito");
 		
 		if(objDadosCliente != null)
 			preencheTela();
@@ -85,8 +96,13 @@ public class DadosClienteActivity extends Activity {
 		public void onClick(View v) {
 			if(validaCampos()){
 				Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
+				//i.putExtra("objDadosCliente", objInstalacaoReceptores);
 				i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
 				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+				i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+				i.putExtra("objComodatoVendas", objComodatoVendas);
+				i.putExtra("objDadosParaDebito", objDadosParaDebito);
+
 				i.putExtra("objDadosCliente", criaObjeto());
 				startActivity(i);
 			}

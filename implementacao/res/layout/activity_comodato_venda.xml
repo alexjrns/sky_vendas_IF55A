@@ -49,7 +49,148 @@
 			    android:inputType="numberDecimal" >
 
 			    <requestFocus />
+			    
 			</EditText>
+			<CheckBox
+			    android:id="@+id/chkCartaoCreditoEDebito"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblCartaoCreditoDebito" />
+			<CheckBox
+			    android:id="@+id/chkDebitoAutomaticoContaCorrente"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblDebAutoContaCorrente" />
+			<CheckBox
+			    android:id="@+id/chkFichaDeCompensacao"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblFichaCompensacao" />
+			<CheckBox
+			    android:id="@+id/chkCEFFinanciamento"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblCEFFinanciamento" />
+			<CheckBox
+			    android:id="@+id/chkPECPFB"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblPECPFB" />
+	       	<View      
+			    android:id="@+id/Divisor1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+			<TextView
+			    android:id="@+id/txtMensalidadesProgramacao"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblMensalidadesDeProgramacao" />
+			<CheckBox
+			    android:id="@+id/chkCartaoCreditoDebitoMensalidadesProgramacao"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblCartaoCreditoDebito" />
+			<CheckBox
+			    android:id="@+id/chkDebitoAutomaticoContaCorrenteMensalidadesProgramacao"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblDebAutoContaCorrente" />
+			<CheckBox
+			    android:id="@+id/chkBoletoBancario"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblBoletoBancario" />
+	       	<View      
+			    android:id="@+id/Divisor2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+			<TextView
+			    android:id="@+id/txtSKYPrePagoLivre12Meses"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lblSKYPrePagoLivre12Meses" />
+	        <RadioGroup
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:orientation="horizontal" >
+	            
+	            <RadioButton
+	                android:id="@+id/rbAVista"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/lblAVista" />
+	
+	            <RadioButton
+	                android:id="@+id/rbParcelado"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/lblParcelado12Vezes" />
+			</RadioGroup>
+
+	        <TextView
+	            android:id="@+id/txtValorPrePago"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblValor" />
+
+	        <EditText
+	            android:id="@+id/edtValorPrePago"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:inputType="number" />
+	        <TextView
+	            android:id="@+id/txtQuantidadeDeParcelas"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblQuantidadeDeParcelas" />
+
+	        <EditText
+	            android:id="@+id/edtQuantidadeDeParcelas"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:inputType="number" />
+	        <TextView
+	            android:id="@+id/txtValorDaParcela"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblValorDaParcela" />
+
+	        <EditText
+	            android:id="@+id/edtValorDaParcela"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:inputType="number" />
+	        
+       		<View      
+			    android:id="@+id/Divisor3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#A8A8A8" />
+            <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="bottom|center" >
+
+	            <ImageButton
+	                android:id="@+id/btnVoltar6"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="start"
+	                android:src="@drawable/ic_voltar" />
+	
+	            <ImageButton
+	                android:id="@+id/btnAvancar6"
+	                android:layout_width="40dp"
+	                android:layout_height="40dp"
+	                android:layout_gravity="end"
+	                android:src="@drawable/ic_avancar" />
+        	</LinearLayout>
 		    
 	    </LinearLayout>
 	    

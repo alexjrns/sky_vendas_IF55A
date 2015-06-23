@@ -47,7 +47,8 @@ public class LoginActivity extends Activity {
 	private OnClickListener lstEntrar = new OnClickListener() {		
 		@Override
 		public void onClick(View v) {
-			if(!isOnline()){
+			if(1!=1){
+			//if(!isOnline()){
 				Toast.makeText(CONTEXTO, R.string.lblParaEntrarNoSistemaConecteseAInternet, Toast.LENGTH_LONG).show();
 			}else{
 				if(validaCampos() /*&& logar()*/){
