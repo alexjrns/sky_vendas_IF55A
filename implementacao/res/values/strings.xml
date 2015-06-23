@@ -153,5 +153,7 @@
     <string name="lblSicredi">Sicredi</string>
     <string name="lblAgencia">Agência</string>
     <string name="lblContaCorrente">Conta-corrente</string>
+    <string name="lblConfirmaPedido">Confirma pedido</string>
+    <string name="lblConfirmarPedido">Confirmar pedido</string>
 
 </resources>

@@ -2,7 +2,12 @@ package com.github.sky_vendas;
 
 import com.example.sky_vendas.R;
 import com.github.sky_vendas.model.ComodatoVendas;
+import com.github.sky_vendas.model.DadosCliente;
+import com.github.sky_vendas.model.DadosParaDebito;
+import com.github.sky_vendas.model.Endereco;
 import com.github.sky_vendas.model.Format;
+import com.github.sky_vendas.model.InstalacaoDosReceptores;
+import com.github.sky_vendas.model.ProgramacaoPromocoes;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,8 +22,7 @@ import android.widget.RadioButton;
 
 public class ComodatoVendaActivity extends Activity {
 	private final Context CONTEXTO = this;
-	private ComodatoVendas objComodatoVendas;
-	
+
 	private CheckBox chkTaxaDeAdesao;
 	private CheckBox chkVenda;
 	private EditText edtValor;
@@ -37,6 +41,15 @@ public class ComodatoVendaActivity extends Activity {
 	private EditText edtValorDaParcela;
 	private ImageButton btnVoltar;
 	private ImageButton btnAvancar;
+	
+	/* Objetos compartilhados */
+	private DadosCliente objDadosCliente;
+	private InstalacaoDosReceptores objInstalacaoReceptores;
+	private Endereco objEnderecoCobranca;
+	private ProgramacaoPromocoes objProgramacaoPromocoes;
+	private ComodatoVendas objComodatoVendas;
+	private DadosParaDebito objDadosParaDebito;
+	/*		*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +77,13 @@ public class ComodatoVendaActivity extends Activity {
 		btnAvancar = (ImageButton) findViewById(R.id.btnAvancar6);
 		btnAvancar.setOnClickListener(lstAvancar);
 
+		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
+		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
+		objEnderecoCobranca = (Endereco) getIntent().getSerializableExtra("objEnderecoCobranca");
+		objProgramacaoPromocoes = (ProgramacaoPromocoes) getIntent().getSerializableExtra("objProgramacaoPromocoes");
+		objComodatoVendas = (ComodatoVendas) getIntent().getSerializableExtra("objComodatoVendas");
+		objDadosParaDebito = (DadosParaDebito) getIntent().getSerializableExtra("objDadosParaDebito");
+
 		if(objComodatoVendas != null)
 			preencheTela();
 	}
@@ -72,6 +92,12 @@ public class ComodatoVendaActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			Intent i = new Intent(CONTEXTO, ProgramacaoPromocoesActivity.class);
+			i.putExtra("objDadosCliente", objDadosCliente);
+			i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+			i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+			i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+			i.putExtra("objDadosParaDebito", objDadosParaDebito);
+			
 			i.putExtra("objComodatoVendas", criaObjeto());
 			startActivity(i);
 		}
@@ -82,6 +108,12 @@ public class ComodatoVendaActivity extends Activity {
 		public void onClick(View v) {
 			if(validaCampos()){
 				Intent i = new Intent(CONTEXTO, DadosParaDebitoActivity.class);
+				i.putExtra("objDadosCliente", objDadosCliente);
+				i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+				i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+				i.putExtra("objDadosParaDebito", objDadosParaDebito);
+
 				i.putExtra("objComodatoVendas", criaObjeto());
 				startActivity(i);
 			}

@@ -2,9 +2,12 @@ package com.github.sky_vendas;
 
 import com.example.sky_vendas.R;
 import com.example.sky_vendas.R.layout;
+import com.github.sky_vendas.model.ComodatoVendas;
 import com.github.sky_vendas.model.DadosCliente;
+import com.github.sky_vendas.model.DadosParaDebito;
 import com.github.sky_vendas.model.Endereco;
 import com.github.sky_vendas.model.InstalacaoDosReceptores;
+import com.github.sky_vendas.model.ProgramacaoPromocoes;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,9 +34,14 @@ public class EnderecoCobrancaActivity extends Activity {
 	private ImageButton btnVoltar;
 	private ImageButton btnAvancar;
 	
+	/* Objetos compartilhados */
 	private DadosCliente objDadosCliente;
 	private InstalacaoDosReceptores objInstalacaoReceptores;
 	private Endereco objEnderecoCobranca;
+	private ProgramacaoPromocoes objProgramacaoPromocoes;
+	private ComodatoVendas objComodatoVendas;
+	private DadosParaDebito objDadosParaDebito;
+	/*					*/	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,16 @@ public class EnderecoCobrancaActivity extends Activity {
 		btnVoltar.setOnClickListener(lstVoltar);
 		btnAvancar = (ImageButton) findViewById(R.id.btnAvancar4);
 		btnAvancar.setOnClickListener(lstAvancar);
+		
+		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
+		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
+		objEnderecoCobranca = (Endereco) getIntent().getSerializableExtra("objEnderecoCobranca");
+		objProgramacaoPromocoes = (ProgramacaoPromocoes) getIntent().getSerializableExtra("objProgramacaoPromocoes");
+		objComodatoVendas = (ComodatoVendas) getIntent().getSerializableExtra("objComodatoVendas");
+		objDadosParaDebito = (DadosParaDebito) getIntent().getSerializableExtra("objDadosParaDebito");
+		
+		if(objEnderecoCobranca!=null)
+			preencheTela();
 	}
 	
 	private OnClickListener lstVoltar = new OnClickListener() {
@@ -59,7 +77,11 @@ public class EnderecoCobrancaActivity extends Activity {
 		public void onClick(View v) {
 			Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
 			i.putExtra("objDadosCliente", objDadosCliente);
-			i.putExtra("objInstalacaoDosReceptores", objInstalacaoReceptores);
+			i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+			i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+			i.putExtra("objComodatoVendas", objComodatoVendas);
+			i.putExtra("objDadosParaDebito", objDadosParaDebito);
+
 			i.putExtra("objEnderecoCobranca", criaObjeto());
 			startActivity(i);
 		}
@@ -69,7 +91,11 @@ public class EnderecoCobrancaActivity extends Activity {
 		public void onClick(View v) {
 			Intent i = new Intent(CONTEXTO, ProgramacaoPromocoesActivity.class);
 			i.putExtra("objDadosCliente", objDadosCliente);
-			i.putExtra("objInstalacaoDosReceptores", objInstalacaoReceptores);
+			i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+			i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+			i.putExtra("objComodatoVendas", objComodatoVendas);
+			i.putExtra("objDadosParaDebito", objDadosParaDebito);
+
 			i.putExtra("objEnderecoCobranca", criaObjeto());
 			startActivity(i);
 		}
@@ -81,5 +107,16 @@ public class EnderecoCobrancaActivity extends Activity {
 				edtCidade.getText().toString(), edtUF.getText().toString(), edtCEP.getText().toString());
 		objEnderecoCobranca = endereco;
 		return endereco;
+	}
+	
+	private void preencheTela(){
+		edtEndereco.setText(objEnderecoCobranca.getEndereco());
+		edtNumero.setText(objEnderecoCobranca.getNumero());
+		edtAptoCasa.setText(objEnderecoCobranca.getAptoCasa());
+		edtComplemento.setText(objEnderecoCobranca.getComplemento());
+		edtBairro.setText(objEnderecoCobranca.getBairro());
+		edtCidade.setText(objEnderecoCobranca.getCidade());
+		edtUF.setText(objEnderecoCobranca.getuF());
+		edtCEP.setText(objEnderecoCobranca.getcEP());
 	}
 }

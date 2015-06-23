@@ -58,7 +58,7 @@ public class DadosClienteActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_dados_cliente);
-		
+
 		rbFisica = (RadioButton) findViewById(R.id.rbPessoaFisica);
 		rbJuridica = (RadioButton) findViewById(R.id.rbPessoaJuridica);
 		rbEstrangeira = (RadioButton) findViewById(R.id.rbPessoaEstrangeira);
@@ -90,13 +90,13 @@ public class DadosClienteActivity extends Activity {
 		if(objDadosCliente != null)
 			preencheTela();
 	}
-	
+
 	OnClickListener lstAvancar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
 			if(validaCampos()){
 				Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
-				//i.putExtra("objDadosCliente", objInstalacaoReceptores);
+				//i.putExtra("objDadosCliente", objDadosCliente);
 				i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
 				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
 				i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);

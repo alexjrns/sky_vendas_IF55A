@@ -1,9 +1,12 @@
 package com.github.sky_vendas;
 
 import com.example.sky_vendas.R;
+import com.github.sky_vendas.model.ComodatoVendas;
 import com.github.sky_vendas.model.DadosCliente;
+import com.github.sky_vendas.model.DadosParaDebito;
 import com.github.sky_vendas.model.Endereco;
 import com.github.sky_vendas.model.InstalacaoDosReceptores;
+import com.github.sky_vendas.model.ProgramacaoPromocoes;
 import com.github.sky_vendas.model.Receptor;
 
 import android.app.Activity;
@@ -49,9 +52,14 @@ public class InstalacaoReceptoresActivity extends Activity {
 	private CheckBox chkBandaLargaFullHD;
 	private CheckBox chkBandaLargaHDCanaisAbertos;
 	
+	/* Objetos compartilhados */
 	private DadosCliente objDadosCliente;
 	private InstalacaoDosReceptores objInstalacaoReceptores;
 	private Endereco objEnderecoCobranca;
+	private ProgramacaoPromocoes objProgramacaoPromocoes;
+	private ComodatoVendas objComodatoVendas;
+	private DadosParaDebito objDadosParaDebito;
+	/*					*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +96,13 @@ public class InstalacaoReceptoresActivity extends Activity {
 		chkBandaLargaHD = (CheckBox) findViewById(R.id.chkBandaLargaHD);
 		chkBandaLargaFullHD = (CheckBox) findViewById(R.id.chkBandaLargaFullHD);
 		chkBandaLargaHDCanaisAbertos = (CheckBox) findViewById(R.id.chkBandaLargaHDCanaisAbertos);
-
+		
 		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
 		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
 		objEnderecoCobranca = (Endereco) getIntent().getSerializableExtra("objEnderecoCobranca");
+		objProgramacaoPromocoes = (ProgramacaoPromocoes) getIntent().getSerializableExtra("objProgramacaoPromocoes");
+		objComodatoVendas = (ComodatoVendas) getIntent().getSerializableExtra("objComodatoVendas");
+		objDadosParaDebito = (DadosParaDebito) getIntent().getSerializableExtra("objDadosParaDebito");
 		
 		if(objInstalacaoReceptores != null)
 			preencheTela();
@@ -106,9 +117,12 @@ public class InstalacaoReceptoresActivity extends Activity {
 				e.printStackTrace();
 			}
 			Intent i = new Intent(CONTEXTO, DadosClienteActivity.class);
-			i.putExtra("instalacaoReceptores", criaObjeto());
-			i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
 			i.putExtra("objDadosCliente", objDadosCliente);
+			i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+			i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+			i.putExtra("objComodatoVendas", objComodatoVendas);
+			i.putExtra("objDadosParaDebito", objDadosParaDebito);
+			i.putExtra("objInstalacaoReceptores", criaObjeto());
 			startActivity(i);
 		}
 	};
@@ -118,10 +132,13 @@ public class InstalacaoReceptoresActivity extends Activity {
 		public void onClick(View v) {
 			if(validaCampos()){
 				Intent i = new Intent(CONTEXTO, EnderecoCobrancaActivity.class);
-				//i.putExtra("instalacaoReceptores", criaObjeto());
-				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
 				i.putExtra("objDadosCliente", objDadosCliente);
-				startActivity(i);				
+				i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+				i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+				i.putExtra("objComodatoVendas", objComodatoVendas);
+				i.putExtra("objDadosParaDebito", objDadosParaDebito);
+				i.putExtra("objInstalacaoReceptores", criaObjeto());
+				startActivity(i);
 			}
 		}
 	};
@@ -206,12 +223,12 @@ public class InstalacaoReceptoresActivity extends Activity {
 		Endereco endereco = new Endereco(0, edtEndereco.getText().toString(), edtNumero.getText().toString(), 
 				edtAptoCasa.getText().toString(), edtComplemento.getText().toString(), edtBairro.getText().toString(), 
 				edtCidade.getText().toString(), edtUF.getText().toString(), edtCEP.getText().toString());
-
-		InstalacaoDosReceptores objInstalacao = new InstalacaoDosReceptores(0, rbCasa.isChecked(), endereco, 
+		
+		InstalacaoDosReceptores instalacaoReceptores = new InstalacaoDosReceptores(0, rbCasa.isChecked(), endereco, 
 				edtNomeCondominio.getText().toString(), edtNomeEdificio.getText().toString(), 
 				edtPontoReferencia.getText().toString(), edtNomeResponsavelAntendimentoInstalador.getText().toString(), 
 				principal, opcional, bandaLarga);
-		objInstalacaoReceptores = objInstalacao;
-		return objInstalacao;
+		objInstalacaoReceptores = instalacaoReceptores;
+		return instalacaoReceptores;
 	}
 }

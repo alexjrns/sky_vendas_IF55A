@@ -1,6 +1,9 @@
 package com.github.sky_vendas.model;
 
-public class Receptor {
+import java.io.Serializable;
+
+public class Receptor implements Serializable {
+	private static final long serialVersionUID = 4888453566374161240L;
 	private int id;
 	private boolean sKY;
 	private boolean hD;

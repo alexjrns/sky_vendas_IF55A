@@ -63,6 +63,10 @@
             android:name="com.github.sky_vendas.VisualizarPedidosActivity"
             android:label="@string/lblPedidosCadastrados" >
         </activity>
+        <activity
+            android:name=".ConfirmaPedidoActivity"
+            android:label="@string/lblConfirmaPedido" >
+        </activity>
     </application>
 
 </manifest>

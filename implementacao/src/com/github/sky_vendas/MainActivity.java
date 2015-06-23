@@ -62,7 +62,8 @@ public class MainActivity extends Activity {
 	private OnClickListener lstEditar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-
+			Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
+			startActivity(i);
 		}
 	};
 
