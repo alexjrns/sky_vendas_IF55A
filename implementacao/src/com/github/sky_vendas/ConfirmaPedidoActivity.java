@@ -63,10 +63,9 @@ public class ConfirmaPedidoActivity extends Activity {
 	
 	private TextView txtNomeCliente;
 	private Button btnConfirmar;
-	private Button btnInserirFoto;
-	int fotoNumber = 0;
-	String photoName;
-
+	//private Button btnInserirFoto;
+	//private int fotoNumber = 0;
+	//private String photoName;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,29 +85,30 @@ public class ConfirmaPedidoActivity extends Activity {
 			txtNomeCliente.setText(objDadosCliente.getNomeRazao());
 		btnConfirmar = (Button) findViewById(R.id.btnConfirmaPedido);
 		btnConfirmar.setOnClickListener(lstConfirmar);
-		
-		btnInserirFoto = (Button) findViewById(R.id.btnInserirFoto);
-		btnInserirFoto.setOnClickListener(lstInserirFoto);
-	}
-	
-	private OnClickListener lstInserirFoto = new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			PackageManager packageManager = CONTEXTO.getPackageManager();
-			if(packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
 
-				Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				i.putExtra(MediaStore.EXTRA_OUTPUT, getCaminhoArquivo());
-				if(i.resolveActivity(CONTEXTO.getPackageManager()) != null) {
-					startActivityForResult(i, 34);
-				}
-				else {
-					Toast.makeText(CONTEXTO, getString(R.string.lblVoceNaoPossuiUmAplicativoDeCameraPadrao), Toast.LENGTH_SHORT).show();
-				}
+		
+		//btnInserirFoto = (Button) findViewById(R.id.btnInserirFoto);
+		//btnInserirFoto.setOnClickListener(lstInserirFoto);
+	}
+
+	/*private OnClickListener lstInserirFoto = new OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		PackageManager packageManager = CONTEXTO.getPackageManager();
+		if(packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+
+			Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+			i.putExtra(MediaStore.EXTRA_OUTPUT, getCaminhoArquivo());
+			if(i.resolveActivity(CONTEXTO.getPackageManager()) != null) {
+				startActivityForResult(i, 34);
 			}
 			else {
-				Toast.makeText(CONTEXTO, getString(R.string.lblSeuDispositivoNaoPossuiCameraFotografica), Toast.LENGTH_SHORT).show();
+				Toast.makeText(CONTEXTO, getString(R.string.lblVoceNaoPossuiUmAplicativoDeCameraPadrao), Toast.LENGTH_SHORT).show();
 			}
+		}
+		else {
+			Toast.makeText(CONTEXTO, getString(R.string.lblSeuDispositivoNaoPossuiCameraFotografica), Toast.LENGTH_SHORT).show();
+		}
 		}
 	};
 	
@@ -125,19 +125,20 @@ public class ConfirmaPedidoActivity extends Activity {
 			}
 		}
 	}
-
+	
 	protected Uri getCaminhoArquivo() {
 		File diretorioMidia = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "medias06");
-
+	
 		if (!diretorioMidia.exists() && !diretorioMidia.mkdirs())
-			Log.d("medias06", "error creating the file");
-
+			Log.d("skyvendas", "erro na criacao do arquivo");
+	
 		fotoNumber++;
 		String fileName = "foto" + fotoNumber + ".jpg";
 		photoName = diretorioMidia.getPath() + File.separator + fileName;
-
+	
 		return Uri.fromFile(new File(photoName));
 	}
+	*/
 	
 	private OnClickListener lstConfirmar = new OnClickListener() {
 		@Override
@@ -150,7 +151,7 @@ public class ConfirmaPedidoActivity extends Activity {
 			alertDialogBuilder.setPositiveButton(R.string.lblSim, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface arg0, int arg1) {
-					setResult(100);
+					//setResult(100);
 					enviaPedido();
 				}
 			});			
@@ -167,19 +168,21 @@ public class ConfirmaPedidoActivity extends Activity {
 	};
 
 	private PedidoVenda criaPedido(){
+		//return new PedidoVenda(0, null, 15, null, null, null, null, null, null, null);
 		return new PedidoVenda(0, Calendar.getInstance(), 15, null, objDadosCliente, objInstalacaoReceptores,
 				objEnderecoCobranca, objProgramacaoPromocoes, objComodatoVendas, objDadosParaDebito);
 	}
 	
 	private void enviaPedido(){
 		PedidoVenda pPedido = criaPedido();
-
+			
 		String resourceURL = SingletonUtilitario.getResourceURL() + "/pedido";
 		AsyncHttpClient httpClient = new AsyncHttpClient();
 
 		JSONObject params = new JSONObject();
 		try {
-			params.put("pedido", pPedido);
+			//params.put("pedido", pPedido);
+			params.put("pedido", null);
 		} catch (JSONException e1) {
 			e1.printStackTrace();
 		}
@@ -196,13 +199,7 @@ public class ConfirmaPedidoActivity extends Activity {
 			public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 				Toast.makeText(CONTEXTO, R.string.lblPedidoCadastradoComSucesso, Toast.LENGTH_SHORT).show();
 				startActivity(new Intent(CONTEXTO, MainActivity.class));
-				/*try {
-					logar(new Usuario(response.getString("login"), response.getString("senha")));
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}*/
 			};
 		});
-		Toast.makeText(CONTEXTO, "Post Feito", Toast.LENGTH_SHORT).show();
 	}
 }
