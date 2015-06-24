@@ -20,4 +20,22 @@
         android:layout_centerHorizontal="true"
         android:text="@string/hello_world" />
 
+    <Button
+        android:id="@+id/btnInserirFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNomeCliente"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/lblInserirFotoDeAssinatura" />
+
+    <ImageView
+        android:id="@+id/imgAssinatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnInserirFoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/button_custom" />
+
 </RelativeLayout>

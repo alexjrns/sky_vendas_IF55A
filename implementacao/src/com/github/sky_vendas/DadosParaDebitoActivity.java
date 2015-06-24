@@ -1,6 +1,5 @@
 package com.github.sky_vendas;
 
-import com.example.sky_vendas.ConfirmaPedidoActivity;
 import com.example.sky_vendas.R;
 import com.github.sky_vendas.model.ComodatoVendas;
 import com.github.sky_vendas.model.DadosCliente;

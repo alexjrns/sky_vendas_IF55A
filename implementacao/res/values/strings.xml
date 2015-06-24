@@ -155,5 +155,11 @@
     <string name="lblContaCorrente">Conta-corrente</string>
     <string name="lblConfirmaPedido">Confirma pedido</string>
     <string name="lblConfirmarPedido">Confirmar pedido</string>
+    <string name="lblUsuarioEOuSenhaInvalidos">Usuário e/ou senha inválidos</string>
+    <string name="lblPedidoCadastradoComSucesso">Pedido cadastrado com sucesso!</string>
+    <string name="lblTemCertezaQueDesejaSalvarEEnviarEssePedido">Tem certeza que deseja salvar e enviar esse pedido?</string>
+    <string name="lblInserirFotoDeAssinatura">Inserir foto de assinatura</string>
+    <string name="lblSeuDispositivoNaoPossuiCameraFotografica">Seu dispositivo não possui câmera fotográfica</string>
+    <string name="lblVoceNaoPossuiUmAplicativoDeCameraPadrao">Você não possui um aplicativo padrão de câmera</string>
 
 </resources>

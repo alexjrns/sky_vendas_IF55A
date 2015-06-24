@@ -8,6 +8,8 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,7 +52,7 @@ public class MainActivity extends Activity {
 			startActivity(i);
 		}
 	};
-	
+
 	private OnClickListener lstVisualizar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -62,8 +64,7 @@ public class MainActivity extends Activity {
 	private OnClickListener lstEditar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Intent i = new Intent(CONTEXTO, InstalacaoReceptoresActivity.class);
-			startActivity(i);
+			startActivity(new Intent(CONTEXTO, ConfirmaPedidoActivity.class));
 		}
 	};
 
@@ -100,6 +101,15 @@ public class MainActivity extends Activity {
 
 		if (id == R.id.action_sair) {
 			confirmaSair();
+			return true;
+		}
+		
+		if (id == R.id.action_logoff){
+			SharedPreferences preferences =	getSharedPreferences("skyvendas", Context.MODE_PRIVATE);
+			Editor editor = preferences.edit();
+			editor.putString("usuarioLogadoLogin", "");
+			editor.putString("usuarioLogadoSenha", "");
+			editor.commit();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

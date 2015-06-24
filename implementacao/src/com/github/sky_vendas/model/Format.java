@@ -1,10 +1,13 @@
 package com.github.sky_vendas.model;
 
 import android.annotation.SuppressLint;
+
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Format {
+public class Format implements Serializable{
+	private static final long serialVersionUID = -1881160736914356637L;
 
 	public Format() {
 	}
