@@ -21,6 +21,11 @@ public class PedidoVenda implements Serializable{
 		super();
 	}
 
+	public PedidoVenda(String nomeCliente) {
+		super();
+		this.dadosDoCliente = new DadosCliente(nomeCliente);
+	}
+	
 	public PedidoVenda(int id, Calendar data, double codigo,
 			PontoDeVendas pontoDeVendas, DadosCliente dadosDoCliente,
 			InstalacaoDosReceptores instalacaoDosReceptores,

@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 	private OnClickListener lstEditar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			startActivity(new Intent(CONTEXTO, ConfirmaPedidoActivity.class));
+			//startActivity(new Intent(CONTEXTO, ConfirmaPedidoActivity.class));
 		}
 	};
 

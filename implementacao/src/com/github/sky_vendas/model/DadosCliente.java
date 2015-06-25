@@ -25,6 +25,11 @@ public class DadosCliente implements Serializable {
 		super();
 	}
 
+	public DadosCliente(String nomeRazao) {
+		super();
+		this.nomeRazao = nomeRazao;
+	}
+	
 	public DadosCliente(int codigo, String tipoPessoa, Calendar dataNascimento,
 			String nomeRazao, String telefoneResidencial,
 			String telefoneComercial, String ramal, boolean sexo,

@@ -44,6 +44,7 @@ public class DadosClienteActivity extends Activity {
 	private EditText edtEmail;
 	private CheckBox chkEmailNaoInformado;
 	private ImageButton btnAvancar;
+	private ImageButton btnVoltar;
 	
 	/* Objetos compartilhados */
 	private DadosCliente objDadosCliente;
@@ -79,6 +80,8 @@ public class DadosClienteActivity extends Activity {
 		chkEmailNaoInformado = (CheckBox) findViewById(R.id.chkEmailNaoInformado);
 		btnAvancar = (ImageButton) findViewById(R.id.btnAvancar2);
 		btnAvancar.setOnClickListener(lstAvancar);
+		btnVoltar = (ImageButton) findViewById(R.id.btnVoltar2);
+		btnVoltar.setOnClickListener(lstVoltar);
 		
 		objDadosCliente = (DadosCliente) getIntent().getSerializableExtra("objDadosCliente");
 		objInstalacaoReceptores = (InstalacaoDosReceptores) getIntent().getSerializableExtra("objInstalacaoReceptores");
@@ -106,6 +109,21 @@ public class DadosClienteActivity extends Activity {
 				i.putExtra("objDadosCliente", criaObjeto());
 				startActivity(i);
 			}
+		}
+	};
+	
+	OnClickListener lstVoltar = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent i = new Intent(CONTEXTO, PontoDeVendaActivity.class);
+			i.putExtra("objInstalacaoReceptores", objInstalacaoReceptores);
+			i.putExtra("objEnderecoCobranca", objEnderecoCobranca);
+			i.putExtra("objProgramacaoPromocoes", objProgramacaoPromocoes);
+			i.putExtra("objComodatoVendas", objComodatoVendas);
+			i.putExtra("objDadosParaDebito", objDadosParaDebito);
+
+			i.putExtra("objDadosCliente", criaObjeto());
+			startActivity(i);
 		}
 	};
 	

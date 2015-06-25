@@ -168,6 +168,8 @@ public class ConfirmaPedidoActivity extends Activity {
 		}
 	};
 
+	
+	
 	private PedidoVenda criaPedido(){
 		return new PedidoVenda(0, Calendar.getInstance(), 15, null, objDadosCliente, objInstalacaoReceptores,
 				objEnderecoCobranca, objProgramacaoPromocoes, objComodatoVendas, objDadosParaDebito);
@@ -359,7 +361,6 @@ public class ConfirmaPedidoActivity extends Activity {
 		} catch (JSONException e1) {
 			e1.printStackTrace();
 		}
-		Toast.makeText(CONTEXTO, params.toString(), Toast.LENGTH_LONG).show();
 
 		StringEntity entity = null;
 		try {

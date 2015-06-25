@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<usuarioStore>
+    <usuarioList>
+        <login>alex</login>
+        <senha>12345</senha>
+        <email>teste@teste.com</email>
+    </usuarioList>
+    <name>store</name>
+</usuarioStore>
