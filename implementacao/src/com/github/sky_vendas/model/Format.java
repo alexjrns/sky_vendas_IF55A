@@ -11,7 +11,10 @@ public class Format implements Serializable{
 
 	public Format() {
 	}
-
+	public static String jsonString(String chave, String valor){	
+		return "\"" + chave + "\": \"" + valor + "\", \n";
+	};
+	
     public static String getString(String value) {
         if (value == null) {
             return "";

@@ -125,10 +125,6 @@ public class PedidoVenda implements Serializable{
 		this.dadosParaDebito = dadosParaDebito;
 	}
 
-	@Override
-	public String toString() {
-		return dadosDoCliente.getNomeRazao() + " | " + data;
-	}
 	
 	
 }

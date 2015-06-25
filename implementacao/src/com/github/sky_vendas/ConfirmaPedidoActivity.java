@@ -18,6 +18,7 @@ import com.github.sky_vendas.model.ComodatoVendas;
 import com.github.sky_vendas.model.DadosCliente;
 import com.github.sky_vendas.model.DadosParaDebito;
 import com.github.sky_vendas.model.Endereco;
+import com.github.sky_vendas.model.Format;
 import com.github.sky_vendas.model.InstalacaoDosReceptores;
 import com.github.sky_vendas.model.PedidoVenda;
 import com.github.sky_vendas.model.ProgramacaoPromocoes;
@@ -174,19 +175,71 @@ public class ConfirmaPedidoActivity extends Activity {
 	}
 	
 	private void enviaPedido(){
-		PedidoVenda pPedido = criaPedido();
+		//PedidoVenda tPedido = criaPedido();
+		DadosCliente cli = new DadosCliente(15, "Fisica", Calendar.getInstance(), "Alex testo",
+				"4333488379", "4332948797", "732", true, "4399006829", "Solteiro", "03989155000190",
+				"105920857", "alex@teste.com", true);
+		Endereco end = new Endereco(0, "Olympio", "72", "casa", "frente", "palmeiras", "londrina",
+				"PR", "86083540");
+		PedidoVenda tPedido = new PedidoVenda(0, null, 15, null, cli, null, end, null, null, null);
 			
 		String resourceURL = SingletonUtilitario.getResourceURL() + "/pedido";
 		AsyncHttpClient httpClient = new AsyncHttpClient();
 
+		/*JSONObject params = new JSONObject();
+		/*try {
+			/* Dados cliente */
+			//params.put("enderecoDeCobranca", end);
+			//params.put("codigo", tPedido.getDadosDoCliente().getCodigo());
+			//params.put("tipoPessoa", tPedido.getDadosDoCliente().getTipoPessoa());
+			//params.put("dataNascimento", tPedido.getDadosDoCliente().getDataNascimento());
+			/*params.put("nomeRazao", tPedido.getDadosDoCliente().getNomeRazao());
+			params.put("telefoneResidencial", tPedido.getDadosDoCliente().getTelefoneResidencial());
+			params.put("telefoneComercial", tPedido.getDadosDoCliente().getTelefoneComercial());
+			params.put("ramal", tPedido.getDadosDoCliente().getRamal());
+			params.put("sexo", tPedido.getDadosDoCliente().isSexo());
+			params.put("telefoneCelular", tPedido.getDadosDoCliente().getTelefoneCelular());
+			params.put("estadoCivil",tPedido.getDadosDoCliente().getEstadoCivil());
+			params.put("cpfCNPJ", tPedido.getDadosDoCliente().getCpfCNPJ());
+			params.put("rgIeRNE", tPedido.getDadosDoCliente().getRgIeRNE());
+			params.put("email", tPedido.getDadosDoCliente().getEmail());			
+			params.put("emailNaoInformado", tPedido.getDadosDoCliente().isEmailNaoInformado());*/
+			//params.put("endereco", tPedido.getEnderecoDeCobranca().getEndereco());
+		/*} catch (JSONException e1) {
+			e1.printStackTrace();
+		}*/
+		String jason = "{\n";
+		jason += "\"dadosDoCliente\":{\n";
+		
+		jason += ("\"codigo\":" + tPedido.getDadosDoCliente().getCodigo() + ", \n");
+		jason += ("\"tipoPessoa\":\"" + tPedido.getDadosDoCliente().getTipoPessoa() + "\",\n");
+		//params.put("dataNascimento", tPedido.getDadosDoCliente().getDataNascimento());
+		jason += Format.jsonString("nomeRazao", tPedido.getDadosDoCliente().getNomeRazao());
+		//jason += ("\"nomeRazao\":\"" + tPedido.getDadosDoCliente().getNomeRazao() + "\",\n");
+		jason += ("\"telefoneResidencial\":\"" + tPedido.getDadosDoCliente().getTelefoneResidencial() + "\",\n");
+		jason += ("\"telefoneComercial\":\"" + tPedido.getDadosDoCliente().getTelefoneComercial() + "\",\n");
+		jason += ("\"ramal\":\"" + tPedido.getDadosDoCliente().getRamal() + "\",\n");
+		jason += ("\"sexo\":" + tPedido.getDadosDoCliente().isSexo()+ ",\n");
+		jason += ("\"telefoneCelular\":\"" + tPedido.getDadosDoCliente().getTelefoneCelular() + "\",\n");
+		jason += ("\"estadoCivil\":\"" + tPedido.getDadosDoCliente().getEstadoCivil() + "\",\n");
+		jason += ("\"cpfCNPJ\":\"" + tPedido.getDadosDoCliente().getCpfCNPJ() + "\",\n");
+		jason += ("\"rgIeRNE\":\"" + tPedido.getDadosDoCliente().getRgIeRNE() + "\",\n");
+		jason += ("\"email\":\"" + tPedido.getDadosDoCliente().getEmail() + "\",\n");	
+		jason += ("\"emailNaoInformado\":" + tPedido.getDadosDoCliente().isEmailNaoInformado());
+		jason += "\n},";
+		jason += "\"enderecoDeCobranca\":{\n";
+		jason += ("\"endereco\": \"" + tPedido.getEnderecoDeCobranca().getEndereco() + "\"\n");
+		jason += "\n}\n}";		
+		
 		JSONObject params = new JSONObject();
 		try {
-			//params.put("pedido", pPedido);
-			params.put("pedido", null);
+			params = new JSONObject(jason);
 		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+		Toast.makeText(CONTEXTO, params.toString(), Toast.LENGTH_SHORT).show();
+
 		StringEntity entity = null;
 		try {
 			entity = new StringEntity(params.toString());

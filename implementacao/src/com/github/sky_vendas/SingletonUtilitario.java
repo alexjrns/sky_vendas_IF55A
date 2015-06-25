@@ -6,7 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 
 public abstract class SingletonUtilitario {
-	private static String resourceURL = "http://10.0.2.2:4000";
+	//private static String resourceURL = "http://10.0.2.2:4000";
+	private static String resourceURL = "http://177.40.74.244:8080";
 	
 	public SingletonUtilitario() {
 	}

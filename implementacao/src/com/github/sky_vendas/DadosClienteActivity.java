@@ -110,11 +110,11 @@ public class DadosClienteActivity extends Activity {
 	};
 	
 	private void preencheTela(){
-		if(objDadosCliente.getTipoPessoa().equals("Física")){
+		if(objDadosCliente.getTipoPessoa().equals("Fisica")){
 			rbFisica.setChecked(true);
 			rbJuridica.setChecked(false);
 			rbEstrangeira.setChecked(false);	
-		}else if(objDadosCliente.getTipoPessoa().equals("Jurídica")){
+		}else if(objDadosCliente.getTipoPessoa().equals("Juridica")){
 			rbFisica.setChecked(false);
 			rbJuridica.setChecked(true);
 			rbEstrangeira.setChecked(false);			
@@ -191,9 +191,9 @@ public class DadosClienteActivity extends Activity {
 	private DadosCliente criaObjeto(){
 		String tipoPessoa = "Não informado";
 		if(rbFisica.isChecked()){
-			tipoPessoa = "Física";
+			tipoPessoa = "Fisica";
 		}else if(rbJuridica.isChecked()){
-			tipoPessoa = "Jurídica";
+			tipoPessoa = "Juridica";
 		}else if(rbEstrangeira.isChecked()){
 			tipoPessoa = "Estrangeira";
 		}
