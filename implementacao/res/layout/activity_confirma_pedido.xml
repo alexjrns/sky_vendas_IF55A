@@ -14,11 +14,31 @@
 
     <Button
         android:id="@+id/btnConfirmaPedido"
+        style="@style/buttonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/lblConfirmarPedido" />
+
+    <ImageView
+        android:id="@+id/imgAssinatura"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/btnConfirmaPedido"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:src="@drawable/button_custom" />
+
+    <Button
+        android:id="@+id/btnInserirImagem"
+        style="@style/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgAssinatura"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="@string/lblInserirFotoDeAssinatura" />
 
 </RelativeLayout>

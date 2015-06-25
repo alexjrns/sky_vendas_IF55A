@@ -15,6 +15,18 @@ public class Format implements Serializable{
 		return "\"" + chave + "\": \"" + valor + "\", \n";
 	};
 	
+	public static String jsonBoolean(String chave, boolean valor){	
+		return "\"" + chave + "\": " + valor + ", \n";
+	};
+	
+	public static String jsonDouble(String chave, double valor){	
+		return "\"" + chave + "\": " + getString(valor) + ", \n";
+	};
+
+	public static String jsonInt(String chave, int valor){	
+		return "\"" + chave + "\": " + getString(valor) + ", \n";
+	};
+	
     public static String getString(String value) {
         if (value == null) {
             return "";

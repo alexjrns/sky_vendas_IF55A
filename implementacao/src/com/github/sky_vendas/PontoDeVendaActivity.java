@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -25,6 +26,8 @@ public class PontoDeVendaActivity extends Activity {
 	private final Context CONTEXTO = this;
 	private Spinner spnPontosDeVenda;
 	private ImageButton btnAvancar;
+	
+	private String[] arraySpinner;
 	
 	/* Objetos compartilhados */
 	private DadosCliente objDadosCliente;
@@ -46,12 +49,16 @@ public class PontoDeVendaActivity extends Activity {
 		objProgramacaoPromocoes = (ProgramacaoPromocoes) getIntent().getSerializableExtra("objProgramacaoPromocoes");
 		objComodatoVendas = (ComodatoVendas) getIntent().getSerializableExtra("objComodatoVendas");
 		objDadosParaDebito = (DadosParaDebito) getIntent().getSerializableExtra("objDadosParaDebito");		
-		
+
 		btnAvancar = (ImageButton) findViewById(R.id.btnAvancar1);
 		btnAvancar.setOnClickListener(lstAvancar);
 		spnPontosDeVenda = (Spinner) findViewById(R.id.spnPontoVenda);
+		
+		arraySpinner = new String[]{ "SKY Londrina"};
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arraySpinner);
+        spnPontosDeVenda.setAdapter(adapter);
 	}
-	
+
 	private OnClickListener lstAvancar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {

@@ -59,10 +59,11 @@ public class ProgramacaoPromocoesActivity extends Activity {
 			i.putExtra("objComodatoVendas", objComodatoVendas);
 			i.putExtra("objDadosParaDebito", objDadosParaDebito);
 
-			//i.putExtra("objProgramacaoPromocoes", criaObjeto());
+			i.putExtra("objProgramacaoPromocoes", criaObjeto());
 			startActivity(i);
 		}
 	};
+
 	private OnClickListener lstVoltar = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
@@ -73,8 +74,12 @@ public class ProgramacaoPromocoesActivity extends Activity {
 			i.putExtra("objComodatoVendas", objComodatoVendas);
 			i.putExtra("objDadosParaDebito", objDadosParaDebito);
 
-			//i.putExtra("objProgramacaoPromocoes", criaObjeto());
+			i.putExtra("objProgramacaoPromocoes", criaObjeto());
 			startActivity(i);			
 		}
 	};
+	
+	private ProgramacaoPromocoes criaObjeto(){
+		return new ProgramacaoPromocoes();
+	}
 }

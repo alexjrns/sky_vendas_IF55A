@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
 		btnVisualizar.setOnClickListener(lstVisualizar);
 		btnEditar = (ImageButton) findViewById(R.id.btnEditar);
 		btnEditar.setOnClickListener(lstEditar);
-
 	}
 
 	@Override
@@ -110,6 +109,8 @@ public class MainActivity extends Activity {
 			editor.putString("usuarioLogadoLogin", "");
 			editor.putString("usuarioLogadoSenha", "");
 			editor.commit();
+			Intent i = new Intent(CONTEXTO, LoginActivity.class);
+			startActivity(i);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
